@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from style_engine.style_suggestor import suggest_styles
 from style_engine.settings_mapper import map_settings
 from feedback_engine.feedback_generator import generate_feedback
+from composition_engine.analyser import analyze_composition
 
 load_dotenv()
 
@@ -65,11 +66,15 @@ try:
         settings_per_style = map_settings(scene_description, styles) # Map each style to concrete camera settings
         print("Mapped settings per style:\n", json.dumps(settings_per_style, indent=2), "\n")
 
+        # Composition analysis for extra signals
+        composition_flags = analyze_composition(IMAGE_PATH)
+        print("Composition flags:", composition_flags, "\n")
+
         final_advice = generate_feedback(
             scene=scene_description,
             styles=styles,
             settings=settings_per_style,
-            composition_flags=[])  # or pull from your composition module
+            composition_flags=composition_flags)  # or pull from your composition module
         
         print(" Final Advice:\n", final_advice)
         #print("Styles:", styles, "Settings:", settings)
