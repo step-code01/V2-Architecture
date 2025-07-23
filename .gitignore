@@ -1,0 +1,70 @@
+# Ignore Python cache & system clutter
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+*.swp
+
+# Ignore notebooks and checkpoint metadata
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+.env/
+.venv/
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+
+# Jupyter notebook metadata (if any)
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Git
+.git/
+
+# Others
+*.log
+
+# Secret and config files
+.env
+*.env
+.env.*
+*.secret.*
+credentials.json
+
+# IDE files
+.vscode/
+.idea/
+*.log
+
+# Python files
+__pycache__/
+*.pyc
+
+# Notebook metadata
+.ipynb_checkpoints/
+
+# Misc
+.DS_Store
+
+.env
+.env
