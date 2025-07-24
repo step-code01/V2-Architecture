@@ -40,8 +40,10 @@ def generate_feedback(scene: str, styles: list[str], settings: dict[str, dict], 
         user_prompt += (
             f"- {style}: ISO {s['ISO']}, {s['aperture']}, {s['shutter']}, WB {s['white_balance']}. Tip: {s['tip']}\n"
         )
-    user_prompt += "\nPlease respond with **one** clear paragraph that picks the best style and tells the user how to achieve it, "
-    user_prompt += "mentioning the key settings and any composition tip."
+    user_prompt += (
+        "\nRespond with one encouraging paragraph that picks a style, mentions key settings, "
+        "and includes a compositional tip"
+    )
 
     payload = {
         "model": "open-mistral-7b",
@@ -64,8 +66,10 @@ def generate_comparative_feedback( #route 2 comparative feedback
 ) -> str:
     flags = composition_flags or []
     system_prompt = (
-        "You are Throughline, a photography mentor who compares a user's stated intent "
-        "with what the photo actually conveys, including composition notes."
+        "You are Throughline, a thoughtful photography mentor. "
+        "Based on the photographer's stated intent and the image description, respond naturally & human-like answers short phrases: "
+        "- If the photo aligns well with the intent, start by celebrating strengths and explaining why. "
+        "- If the photo diverges, point out one area to improve and give a concrete tip."
     )
     user_prompt = (
         f"User Intent:\n{json.dumps(intent, indent=2)}\n\n"
@@ -74,8 +78,8 @@ def generate_comparative_feedback( #route 2 comparative feedback
     if flags:
         user_prompt += "Composition Notes:\n- " + "\n- ".join(flags) + "\n\n"
     user_prompt += (
-        "Please provide a single, concise paragraph that tells the user how well their intent "
-        "was realized in the image, points out one or two areas to improve, and gives a concrete tip."
+        "Please respond with a single, natural paragraph that includes praise when appropriate "
+        "and gentle guidance otherwise."
     )
 
     payload = {
