@@ -16,6 +16,7 @@ HEADERS = {
 }
 
 def generate_feedback(scene: str, styles: list[str], settings: dict[str, dict], composition_flags:  Optional[list[str]] = None) -> str:
+    #route 1 feedback engine
     """
     Takes scene description, style list, per‑style settings, and optional composition flags,
     and returns a single mentor‑style advice string.
@@ -54,3 +55,39 @@ def generate_feedback(scene: str, styles: list[str], settings: dict[str, dict], 
     resp = requests.post(API_URL, json=payload, headers=HEADERS, timeout=30)
     resp.raise_for_status()
     return resp.json()["choices"][0]["message"]["content"]
+
+
+def generate_comparative_feedback( #route 2 comparative feedback
+    scene: str,
+    intent: dict,
+    composition_flags: Optional[list[str]] = None
+) -> str:
+    flags = composition_flags or []
+    system_prompt = (
+        "You are Throughline, a photography mentor who compares a user's stated intent "
+        "with what the photo actually conveys, including composition notes."
+    )
+    user_prompt = (
+        f"User Intent:\n{json.dumps(intent, indent=2)}\n\n"
+        f"Image Description:\n{scene}\n\n"
+    )
+    if flags:
+        user_prompt += "Composition Notes:\n- " + "\n- ".join(flags) + "\n\n"
+    user_prompt += (
+        "Please provide a single, concise paragraph that tells the user how well their intent "
+        "was realized in the image, points out one or two areas to improve, and gives a concrete tip."
+    )
+
+    payload = {
+        "model":"open-mistral-7b",
+        "temperature":0.5,
+        "messages":[
+            {"role":"system","content":system_prompt},
+            {"role":"user","content":user_prompt}
+        ]
+    }
+
+    resp = requests.post(API_URL, json=payload, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    return resp.json()["choices"][0]["message"]["content"]
+
