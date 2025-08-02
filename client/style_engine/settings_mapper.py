@@ -31,10 +31,12 @@ def map_settings(scene_description: str, styles: list[str]) -> dict[str, dict]:
     results = {}
     for style in styles:
         system_prompt = (
-            "You are a professional photography technician. "
+            "You are a professional photographer with 20+ years of experience. "
             "Given a scene description and a desired mood/style, "
             "recommend ISO, aperture, shutter speed, white balance (Kelvin), "
-            "and a single composition tip."
+            "and a single composition tip." \
+            "in composition, try out all the unique composition techniques like golden ratio, fibbonachi spiral, leading lines etc" \
+            "in the image, and recommend which of them is most suitable." \
         )
         user_prompt = (
             f"Scene: “{scene_description}”\n"

@@ -21,7 +21,8 @@ def suggest_styles(scene_description: str, top_k: int = 3) -> list[str]:
         "You are a creative photography stylist. "
         "Given a scene description, suggest distinct moods or styles "
         "that would suit that scene. Return exactly the number of styles requested, "
-        "each as a short phrase."
+        "each as a short phrase." \
+        "Give something that is actually useful and works. "
     )
     user_prompt = (
         f"Scene: “{scene_description}”\n\n"
