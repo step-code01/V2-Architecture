@@ -11,6 +11,8 @@ from style_engine.style_suggestor import suggest_styles
 from style_engine.settings_mapper import map_settings
 from feedback_engine.feedback_generator import generate_feedback
 from composition_engine.analyser import analyze_composition
+#from utils.exif_extractv2 import camera_context_block,build_camera_context
+
 
 load_dotenv()
 
