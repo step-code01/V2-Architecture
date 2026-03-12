@@ -46,6 +46,7 @@ Final: Shoot at golden hour. Place train on lower horizontal third.
 Update: The latest real-time version of Througline built with frameworks is in experimentation phase. 
 Early stages of experimentations and minor versions at [PSD-V2.0R](https://github.com/step-code01/PSD_v2.0R), [V1R](https://github.com/step-code01/V1R_Throughline).
 Here's the demo of me explaining the architecture about it and how it works. 
+[![Throughline Demo](./arch_demo.png)](https://youtu.be/7jx8Hn23vSE?si=ShUHH0PEjKbGLqVh&t=191)
 
 This is not the first version. It's the result of 7 months and 5 approaches, 
 each failure redefining what the problem actually was. The below table only showcases major architectural changes and WHY. 
