@@ -32,14 +32,6 @@ Suggested styles:
 Final: Shoot at golden hour. Place train on lower horizontal third. 
        Surrounding countryside fills the upper two-thirds.
 ```
-## Working Screenshots
-<img width="1816" height="1144" alt="image" src="https://github.com/user-attachments/assets/725e3614-362d-4cfa-bb1d-1b4155478f2a" />
-<img width="1801" height="449" alt="image" src="https://github.com/user-attachments/assets/dc888572-dd38-48db-944b-0493893244b4" />
-
-> Model with Thinking ON
-<img width="1807" height="448" alt="image" src="https://github.com/user-attachments/assets/66f40fc9-1567-4a15-bdcd-1d0c8a705adf" />
-> Final Recommendation
-
 ---
 
 ## Architecture Evolution
@@ -60,6 +52,15 @@ each failure redefining what the problem actually was. The below table only show
 | ShotVL-based cinematographic priors | Inject domain-specific visual priors | The actual problem is retrieval + reasoning over film corpora. | 
 
 Full iteration logs, architecture sketches, and weekly notes are in [/devlog](./devlog).  (Will upload once I clean 8+ weeks of files up)
+
+---
+## Working Screenshots
+<img width="1816" height="1144" alt="image" src="https://github.com/user-attachments/assets/725e3614-362d-4cfa-bb1d-1b4155478f2a" />
+<img width="1801" height="449" alt="image" src="https://github.com/user-attachments/assets/dc888572-dd38-48db-944b-0493893244b4" />
+
+> Model with Thinking ON
+<img width="1807" height="448" alt="image" src="https://github.com/user-attachments/assets/66f40fc9-1567-4a15-bdcd-1d0c8a705adf" />
+> Final Recommendation
 
 ---
 
