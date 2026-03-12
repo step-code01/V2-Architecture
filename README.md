@@ -1,5 +1,5 @@
 # Throughline
-> *Give me a scene. I'll tell you how to shoot it.*
+> *Give me a scene. I'll tell you how to execute your creative vision.*
 
 Throughline analyses a photograph, understands what you're trying to achieve, 
 and surfaces cinematographic decisions, composition flags, shooting styles, 
@@ -43,6 +43,9 @@ Final: Shoot at golden hour. Place train on lower horizontal third.
 ---
 
 ## Architecture Evolution
+Update: The latest real-time version of Througline built with frameworks is in experimentation phase. 
+Early stages of experimentations and minor versions at [PSD-V2.0R](https://github.com/step-code01/PSD_v2.0R), [V1R](https://github.com/step-code01/V1R_Throughline).
+Here's the demo of me explaining the architecture about it and how it works. 
 
 This is not the first version. It's the result of 7 months and 5 approaches, 
 each failure redefining what the problem actually was. The below table only showcases major architectural changes and WHY. 
@@ -55,7 +58,7 @@ each failure redefining what the problem actually was. The below table only show
 | Metadata extraction + grounding feedback | Ground suggestions with metadata, not rules | Priors didn't transfer well across scene types. Needed retrieval, not injection. | [Eg1](https://drive.google.com/file/d/1XW-8m-OWg9GhTjaPBo7gGL9Ba73bOp2G/view?usp=sharing) [Eg2](https://drive.google.com/file/d/1v2Nx3zO0oYAjFhLlv7YwTcTOqHlwyaGc/view?usp=sharing) |
 | ShotVL-based cinematographic priors | Inject domain-specific visual priors | The actual problem is retrieval + reasoning over film corpora. | 
 
-Full iteration logs, architecture sketches, and weekly notes are in [/devlog](./devlog). (will upload as soon as I get time!)
+Full iteration logs, architecture sketches, and weekly notes are in [/devlog](./devlog).  (Will upload once I clean 8+ weeks of files up)
 
 ---
 
@@ -95,4 +98,4 @@ Python, FastAPI, OpenCV, Vision LLMs, Hugging Face Transformers
 ## Devlog
 
 Weekly notes, architecture sketches (Excalidraw), and A/B testing 
-results are in [/devlog](./devlog). Raw, unedited, dated. (Will be updated soon)
+results are in [/devlog](./devlog). Raw, unedited, dated. (Will upload once I clean 8+ weeks of files up)
